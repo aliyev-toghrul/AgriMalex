@@ -1,0 +1,700 @@
+{
+  "system": {
+    "name": "AgriMalex™",
+    "brand": "AGRIMALEX",
+    "tagline": "Healthier Crops | Smarter Decisions | A Sustainable Planet",
+    "version": "2.0.0",
+    "currency": "USD",
+    "deployment": {
+      "target": "Cloudflare Pages",
+      "domain": "agrimalex.pages.dev"
+    },
+    "subscription": {
+      "plan": "AgriMalex Pro Enterprise",
+      "monthlyBasePrice": 10,
+      "discountPercent": 50,
+      "currentPrice": 5,
+      "billingCycle": "monthly",
+      "status": "Active (50% Newcomer Offer Applied)",
+      "trialDaysRemaining": 14,
+      "features": [
+        "Dual AI Plant Doctor & Invasive Species Vision Diagnostic",
+        "Interactive GIS Satellite & Invasive Hotspot Mapping",
+        "Multi-Farm & Plot Agronomy Tracking with Soil Health Telemetry",
+        "Automated EDRR Rapid Response & Treatment Ledger",
+        "Full Profit & Loss (P&L) Accounting & Excel / PDF Export",
+        "Constant Integrated Weather API & Crop Suitability Alerts"
+      ]
+    }
+  },
+  "globalOverview": {
+    "totalFarms": 12,
+    "countriesCount": 8,
+    "totalAreaHa": 1248,
+    "activeSensors": 18,
+    "sensorsOnline": "12/18",
+    "cropTypesCount": 7,
+    "estimatedYield": "4.2 t/ha",
+    "globalRegionalFarms": {
+      "northAmerica": 24,
+      "southAmerica": 16,
+      "europe": 18,
+      "africa": 32,
+      "asia": 28,
+      "australia": 10
+    }
+  },
+  "currentUser": {
+    "id": "usr-amina",
+    "name": "Amina Mwangi",
+    "email": "amina.mwangi@agrimalex.com",
+    "role": "Farmer & Lead Agronomist",
+    "location": "Nairobi / Kibwezi, Kenya",
+    "avatar": "AM",
+    "isAdmin": true
+  },
+  "currentFarm": {
+    "id": "farm-kibwezi",
+    "name": "Kibwezi Farm",
+    "country": "Kenya",
+    "region": "Makueni County",
+    "coordinates": [-2.4167, 37.9667],
+    "areaHa": 120,
+    "farmingType": "Mixed farming",
+    "cropCondition": 87,
+    "conditionStatus": "Good",
+    "conditionTrend": "+5% vs last 7 days",
+    "soilMoisture": 32,
+    "optimalMoistureRange": "25-45%",
+    "nextIrrigation": "In 3 days",
+    "nextIrrigationEst": "Est. 18 mm",
+    "activeAlertsCount": 2
+  },
+  "weather": {
+    "location": "Nairobi, Kenya",
+    "coordinates": "Lat 1.29° S, Lon 36.82° E",
+    "tempC": 24,
+    "condition": "Partly cloudy",
+    "humidity": 68,
+    "windSpeed": "12 km/h",
+    "rain24h": "2.4 mm",
+    "forecast10Day": [
+      { "day": "Today", "high": 26, "low": 18, "rain": "2 mm", "icon": "☀️" },
+      { "day": "Tue", "high": 25, "low": 17, "rain": "0 mm", "icon": "🌤" },
+      { "day": "Wed", "high": 24, "low": 16, "rain": "1 mm", "icon": "🌧" },
+      { "day": "Thu", "high": 24, "low": 15, "rain": "3 mm", "icon": "⛈" },
+      { "day": "Fri", "high": 23, "low": 15, "rain": "0 mm", "icon": "⛅" }
+    ]
+  },
+  "farms": [
+    {
+      "id": "farm-01",
+      "name": "Kibwezi Farm",
+      "country": "Kenya",
+      "region": "Makueni County",
+      "coordinates": [-2.4167, 37.9667],
+      "totalArea": 120.0,
+      "activePlots": 4,
+      "soilType": "Loamy Sand / Red Sandy Clay",
+      "irrigationType": "Drip & Precision Sprinkler",
+      "cropCondition": 87,
+      "soilMoisture": 32,
+      "primaryCrops": ["Maize", "French Beans", "Watermelon", "Mangoes"],
+      "status": "Active",
+      "soilOrganicCarbon": 2.4,
+      "erosionRisk": "Low",
+      "groundCover": 82
+    },
+    {
+      "id": "farm-02",
+      "name": "Baku Agritech Valley",
+      "country": "Azerbaijan",
+      "region": "Absheron & Shirvan",
+      "coordinates": [40.4093, 49.8671],
+      "totalArea": 85.0,
+      "activePlots": 3,
+      "soilType": "Silt Loam / Grey-Brown Meadow",
+      "irrigationType": "Subsurface Drip",
+      "cropCondition": 91,
+      "soilMoisture": 28,
+      "primaryCrops": ["Tomatoes", "Pomegranates", "Hazelnuts", "Olives"],
+      "status": "Active",
+      "soilOrganicCarbon": 1.9,
+      "erosionRisk": "Low",
+      "groundCover": 88
+    },
+    {
+      "id": "farm-03",
+      "name": "Eldoret Highland Agro-Estate",
+      "country": "Kenya",
+      "region": "Uasin Gishu",
+      "coordinates": [0.5143, 35.2698],
+      "totalArea": 210.0,
+      "activePlots": 6,
+      "soilType": "Volcanic Humic Nitisol",
+      "irrigationType": "Supplemental Pivot & Rainfed",
+      "cropCondition": 82,
+      "soilMoisture": 36,
+      "primaryCrops": ["Wheat", "Barley", "Canola", "Potatoes"],
+      "status": "Active",
+      "soilOrganicCarbon": 3.1,
+      "erosionRisk": "Medium",
+      "groundCover": 92
+    },
+    {
+      "id": "farm-04",
+      "name": "Ganja Regional Seed Base",
+      "country": "Azerbaijan",
+      "region": "Ganja-Gazakh",
+      "coordinates": [40.6828, 46.3606],
+      "totalArea": 140.0,
+      "activePlots": 5,
+      "soilType": "Chestnut Soils",
+      "irrigationType": "Furrow & Micro-sprinkler",
+      "cropCondition": 85,
+      "soilMoisture": 30,
+      "primaryCrops": ["Winter Wheat", "Cotton", "Grapes"],
+      "status": "Active",
+      "soilOrganicCarbon": 2.2,
+      "erosionRisk": "Low",
+      "groundCover": 79
+    }
+  ],
+  "plots": [
+    {
+      "id": "PL-KIB-01",
+      "farmId": "farm-01",
+      "name": "Field B (Maize)",
+      "area": 35.0,
+      "crop": "Maize (Hybrid DH04)",
+      "variety": "Drought Tolerant",
+      "plantedDate": "2026-08-15",
+      "expectedHarvest": "2026-12-10",
+      "soilPh": 6.4,
+      "ndvi": 0.72,
+      "healthStatus": "Healthy",
+      "irrigation": "Drip Line 1.6 L/h",
+      "fertilizerHistory": "CAN 50kg/ha top-dress; NPK 17:17:17 at planting"
+    },
+    {
+      "id": "PL-KIB-02",
+      "farmId": "farm-01",
+      "name": "Field C (Vegetables)",
+      "area": 25.0,
+      "crop": "French Beans & Chillies",
+      "variety": "Amy French Bean",
+      "plantedDate": "2026-09-01",
+      "expectedHarvest": "2026-11-20",
+      "soilPh": 6.8,
+      "ndvi": 0.68,
+      "healthStatus": "Low Soil Moisture",
+      "irrigation": "Micro-Sprinklers",
+      "fertilizerHistory": "Composted poultry manure + soluble potassium nitrate"
+    },
+    {
+      "id": "PL-BAK-01",
+      "farmId": "farm-02",
+      "name": "Absheron Greenhouse Plot 1",
+      "area": 18.0,
+      "crop": "Cherry Tomatoes",
+      "variety": "Volcano F1",
+      "plantedDate": "2026-07-20",
+      "expectedHarvest": "2026-11-30",
+      "soilPh": 7.1,
+      "ndvi": 0.84,
+      "healthStatus": "Optimal",
+      "irrigation": "Automated Drip with Fertigation",
+      "fertilizerHistory": "Calcium Nitrate + Potassium Sulphate hydro-mix"
+    },
+    {
+      "id": "PL-ELD-01",
+      "farmId": "farm-03",
+      "name": "Field A (Wheat)",
+      "area": 75.0,
+      "crop": "Wheat (Kenya Robin)",
+      "variety": "High-Yield Milling",
+      "plantedDate": "2026-06-10",
+      "expectedHarvest": "2026-11-05",
+      "soilPh": 5.8,
+      "ndvi": 0.65,
+      "healthStatus": "Nutrient Stress (Nitrogen)",
+      "irrigation": "Rainfed with Pivot Backup",
+      "fertilizerHistory": "DAP 100kg/ha basal; foliar zinc application"
+    }
+  ],
+  "people": [
+    {
+      "id": "P-01",
+      "name": "Amina Mwangi",
+      "role": "Farm Manager & Lead Agronomist",
+      "farm": "Kibwezi Farm",
+      "country": "Kenya",
+      "phone": "+254 712 345 678",
+      "status": "Active",
+      "email": "amina.mwangi@agrimalex.com",
+      "lastVisit": "2026-10-25"
+    },
+    {
+      "id": "P-02",
+      "name": "Toghrul Aliyev",
+      "role": "Agricultural Data Systems Specialist",
+      "farm": "Baku Agritech Valley",
+      "country": "Azerbaijan",
+      "phone": "+994 50 234 5678",
+      "status": "Active",
+      "email": "toghrul.aliyev@agrimalex.com",
+      "lastVisit": "2026-10-26"
+    },
+    {
+      "id": "P-03",
+      "name": "John Kipkorir",
+      "role": "Irrigation Technician",
+      "farm": "Kibwezi Farm",
+      "country": "Kenya",
+      "phone": "+254 722 890 123",
+      "status": "Active",
+      "email": "j.kipkorir@field.agrimalex.com",
+      "lastVisit": "2026-10-24"
+    },
+    {
+      "id": "P-04",
+      "name": "Leyla Mammadova",
+      "role": "Soil Health & IPM Consultant",
+      "farm": "Baku Agritech Valley",
+      "country": "Azerbaijan",
+      "phone": "+994 55 987 6543",
+      "status": "Active",
+      "email": "leyla.m@agri-consult.az",
+      "lastVisit": "2026-10-22"
+    },
+    {
+      "id": "P-05",
+      "name": "Dr. David Ochieng",
+      "role": "Senior Ecologist & EDRR Lead",
+      "farm": "Regional Invasive Species Command",
+      "country": "Kenya / Regional",
+      "phone": "+254 733 456 789",
+      "status": "Active",
+      "email": "d.ochieng@ecoguard.org",
+      "lastVisit": "2026-10-26"
+    }
+  ],
+  "species": [
+    {
+      "id": "SPEC-01",
+      "commonName": "Water Hyacinth",
+      "scientificName": "Eichhornia crassipes",
+      "risk": "Critical",
+      "habitat": "Freshwater lakes, rivers, dams, irrigation reservoirs",
+      "spreadPathway": "Water currents, boats, fishing gear, decorative trade",
+      "status": "Established",
+      "lastObserved": "2026-10-26",
+      "impactSummary": "Forms dense impenetrable mats blocking sunlight, depleting oxygen for fish, choking water intake pumps, and harboring disease vectors.",
+      "controlMethods": {
+        "mechanical": "Harvester boats, floating physical booms, manual winch extraction before flowering.",
+        "chemical": "Glyphosate (aquatic formulation 2.5 L/ha) or 2,4-D amine with non-ionic surfactant. Strictly avoid open potable water sources.",
+        "biological": "Weevils Neochetina eichhorniae and Neochetina bruchi.",
+        "restoration": "Replant native reeds (Typha capensis, Cyperus papyrus) along banks."
+      }
+    },
+    {
+      "id": "SPEC-02",
+      "commonName": "Prosopis (Mathenge / Mesquite)",
+      "scientificName": "Prosopis juliflora",
+      "risk": "High",
+      "habitat": "Arid, semi-arid rangelands, riverbanks, irrigated canals",
+      "spreadPathway": "Livestock ingestion, flash floods, seed pods in feed",
+      "status": "Expanding",
+      "lastObserved": "2026-10-25",
+      "impactSummary": "Deep taproots deplete groundwater table, aggressive thorns injure livestock, displaces native Acacia, forms monoculture thickets.",
+      "controlMethods": {
+        "mechanical": "Root-collar excavation 10-15 cm below soil level; stump extraction.",
+        "chemical": "Basal bark spray with Triclopyr (1.5-2%) in diesel carrier applied immediately to cut stumps.",
+        "biological": "Seed-feeding bruchid beetles (Algarobius prosopis).",
+        "restoration": "Reseed with drought-hardy native grasses (Cenchrus ciliaris, Eragrostis)."
+      }
+    },
+    {
+      "id": "SPEC-03",
+      "commonName": "Lantana",
+      "scientificName": "Lantana camara",
+      "risk": "High",
+      "habitat": "Forest margins, pastures, fallow arable plots, roadsides",
+      "spreadPathway": "Frugivorous birds, ornamental trade, soil disturbance",
+      "status": "Established",
+      "lastObserved": "2026-10-24",
+      "impactSummary": "Allelopathic toxins suppress crop seedling germination, poisonous to cattle, forms impenetrable barriers that impede farm equipment.",
+      "controlMethods": {
+        "mechanical": "Bulldozer blade grubbing, hand pulling of taproot when soil is moist.",
+        "chemical": "Foliar spray Fluroxypyr or Glyphosate (1.5% v/v) during active vegetative growth.",
+        "biological": "Lantana bug (Teleonemia scrupulosa), leaf-mining beetle (Octotoma scabripennis).",
+        "restoration": "Immediate establishment of competitive legume cover crops (Desmodium, Mucuna)."
+      }
+    },
+    {
+      "id": "SPEC-04",
+      "commonName": "Giant Salvinia (Kariba Weed)",
+      "scientificName": "Salvinia molesta",
+      "risk": "Critical",
+      "habitat": "Slow-moving rivers, swamps, irrigation canals, aquaculture ponds",
+      "spreadPathway": "Contaminated machinery, waterfowl, water sport equipment",
+      "status": "Emerging",
+      "lastObserved": "2026-10-21",
+      "impactSummary": "Doubles biomass in 3-5 days under warm conditions; suffocates aquatic life and clogs drainage networks.",
+      "controlMethods": {
+        "mechanical": "Surface skimming with specialized nylon nets; containment booms.",
+        "chemical": "Endothall or Diquat Dibromide aquatic formulation (licensed handlers only).",
+        "biological": "Cyrtobagous salviniae weevils (highly host-specific and effective).",
+        "restoration": "Monitor water flow velocity and aerate holding basins."
+      }
+    },
+    {
+      "id": "SPEC-05",
+      "commonName": "Parthenium Weed (Congress Grass)",
+      "scientificName": "Parthenium hysterophorus",
+      "risk": "High",
+      "habitat": "Agricultural fields, roadsides, disturbed land, overgrazed pastures",
+      "spreadPathway": "Vehicles, contaminated seed grain, livestock hooves",
+      "status": "Emerging",
+      "lastObserved": "2026-10-20",
+      "impactSummary": "Potent allergen causing dermatitis and asthma in farm workers; reduces pasture productivity by 90%; contaminates meat and milk.",
+      "controlMethods": {
+        "mechanical": "Manual uprooting wearing full PPE (gloves, respirators) before seed set.",
+        "chemical": "Atrazine 500 SC or 2,4-D Sodium salt during rosette stage.",
+        "biological": "Zygogramma bicolorata (Mexican beetle), Epiblema strenuana.",
+        "restoration": "High-density planting of marigold (Tagetes erecta) or competitive grasses."
+      }
+    }
+  ],
+  "observations": [
+    {
+      "id": "OBS-2026-0416",
+      "speciesId": "SPEC-01",
+      "speciesName": "Water Hyacinth",
+      "scientificName": "Eichhornia crassipes",
+      "location": "Athi River Corridor B / Kibwezi Intake",
+      "coordinates": [-2.428, 38.012],
+      "riskLevel": "Critical",
+      "extentHa": 3.8,
+      "reporter": "John Kipkorir (Irrigation Tech)",
+      "submittedAt": "2026-10-27T06:30:00Z",
+      "status": "Pending",
+      "evidence": ["intake_choke_01.jpg", "satellite_cluster_b.jpg"],
+      "notes": "Fast-moving green mat sighted choking main irrigation intake canal. Urgent response needed before downstream pump stations are damaged."
+    },
+    {
+      "id": "OBS-2026-0415",
+      "speciesId": "SPEC-02",
+      "speciesName": "Prosopis",
+      "scientificName": "Prosopis juliflora",
+      "location": "Zone K-12 Grazing Perimeter",
+      "coordinates": [-2.395, 37.945],
+      "riskLevel": "High",
+      "extentHa": 14.5,
+      "reporter": "Amina Mwangi",
+      "submittedAt": "2026-10-26T14:15:00Z",
+      "status": "Verified",
+      "evidence": ["thicket_encroach.jpg"],
+      "notes": "Verified by Dr. Ochieng. Thick scrub encroaching on perimeter pasture. Scheduled for mechanical root-cutting."
+    },
+    {
+      "id": "OBS-2026-0414",
+      "speciesId": "SPEC-03",
+      "speciesName": "Lantana",
+      "scientificName": "Lantana camara",
+      "location": "Forest Edge R-07 / Plot 4 Border",
+      "coordinates": [-2.405, 37.978],
+      "riskLevel": "High",
+      "extentHa": 5.2,
+      "reporter": "Field Scout K. Ndwiga",
+      "submittedAt": "2026-10-25T09:40:00Z",
+      "status": "Action Assigned",
+      "evidence": ["lantana_flowers.jpg"],
+      "notes": "Action assigned to Rapid Response Team 2. Mechanical grubbing planned."
+    },
+    {
+      "id": "OBS-2026-0412",
+      "speciesId": "SPEC-04",
+      "speciesName": "Giant Salvinia",
+      "scientificName": "Salvinia molesta",
+      "location": "Baku Reservoir Basin Dam 3",
+      "coordinates": [40.425, 49.882],
+      "riskLevel": "Critical",
+      "extentHa": 1.2,
+      "reporter": "Toghrul Aliyev",
+      "submittedAt": "2026-10-24T11:20:00Z",
+      "status": "Verified",
+      "evidence": ["salvinia_mat.jpg"],
+      "notes": "Surface skimmers deployed. Cyrtobagous biological units requested."
+    }
+  ],
+  "responseCases": [
+    {
+      "id": "CASE-01",
+      "observationId": "OBS-2026-0416",
+      "title": "Athi River Water Hyacinth Intake Defense",
+      "lead": "Dr. David Ochieng",
+      "team": "Aquatic Bio-Defense Unit",
+      "currentStage": "Verification",
+      "timeline": [
+        { "stage": "Detection", "status": "done", "timestamp": "2026-10-27 06:30" },
+        { "stage": "Verification", "status": "active", "timestamp": "In Progress" },
+        { "stage": "Risk Assessment", "status": "pending", "timestamp": "-" },
+        { "stage": "Containment", "status": "pending", "timestamp": "-" },
+        { "stage": "Treatment", "status": "pending", "timestamp": "-" },
+        { "stage": "Recovery", "status": "pending", "timestamp": "-" }
+      ],
+      "slaDeadline": "2026-10-28 12:00",
+      "priority": "Critical",
+      "budgetAllocated": 4500
+    },
+    {
+      "id": "CASE-02",
+      "observationId": "OBS-2026-0415",
+      "title": "Zone K-12 Prosopis Bush Clearing & Rangeland Restoration",
+      "lead": "Amina Mwangi",
+      "team": "Rangeland Engineering Squad",
+      "currentStage": "Containment",
+      "timeline": [
+        { "stage": "Detection", "status": "done", "timestamp": "2026-10-26 14:15" },
+        { "stage": "Verification", "status": "done", "timestamp": "2026-10-26 17:00" },
+        { "stage": "Risk Assessment", "status": "done", "timestamp": "2026-10-27 08:00" },
+        { "stage": "Containment", "status": "active", "timestamp": "Underway" },
+        { "stage": "Treatment", "status": "pending", "timestamp": "-" },
+        { "stage": "Recovery", "status": "pending", "timestamp": "-" }
+      ],
+      "slaDeadline": "2026-10-31 18:00",
+      "priority": "High",
+      "budgetAllocated": 7800
+    }
+  ],
+  "treatments": [
+    {
+      "id": "TRT-88",
+      "site": "Site R-07 Forest Border",
+      "species": "Lantana camara",
+      "method": "Mechanical Uprooting & Bio-mulching",
+      "treatedAreaHa": 18.0,
+      "costUsd": 2480,
+      "date": "2026-10-18",
+      "team": "Team Alpha",
+      "outcome": "Contained",
+      "followUpDays": 14,
+      "notes": "Stumps completely removed. Replanted native acacia and desmodium cover."
+    },
+    {
+      "id": "TRT-89",
+      "site": "River Intake Corridor B",
+      "species": "Water Hyacinth",
+      "method": "Integrated Booming + Bio-agent Release",
+      "treatedAreaHa": 42.0,
+      "costUsd": 7900,
+      "date": "2026-10-12",
+      "team": "Aquatic Bio-Defense",
+      "outcome": "Monitoring",
+      "followUpDays": 7,
+      "notes": "Boom barrier successfully arrested 80% flow. Weevil release underway."
+    },
+    {
+      "id": "TRT-90",
+      "site": "Zone K-12 Pasture Border",
+      "species": "Prosopis juliflora",
+      "method": "Excavation + Basal Triclopyr + Native Seeding",
+      "treatedAreaHa": 31.0,
+      "costUsd": 5610,
+      "date": "2026-10-05",
+      "team": "Rangeland Engineering",
+      "outcome": "Recovery",
+      "followUpDays": 30,
+      "notes": "Regrowth minimal. Native grass cover at 64% after 3 weeks."
+    }
+  ],
+  "harvests": [
+    {
+      "id": "H-2026-101",
+      "date": "2026-10-22",
+      "plotId": "PL-KIB-01",
+      "farm": "Kibwezi Farm",
+      "crop": "Maize (Hybrid DH04)",
+      "quantityTonnes": 142.5,
+      "grade": "Grade A",
+      "destination": "National Cereals Board / Local Millers",
+      "pricePerTonne": 280,
+      "totalValueUsd": 39900
+    },
+    {
+      "id": "H-2026-102",
+      "date": "2026-10-18",
+      "plotId": "PL-BAK-01",
+      "farm": "Baku Agritech Valley",
+      "crop": "Cherry Tomatoes",
+      "quantityTonnes": 28.0,
+      "grade": "Grade A",
+      "destination": "Baku Premium Grocers & Export (UAE)",
+      "pricePerTonne": 1450,
+      "totalValueUsd": 40600
+    },
+    {
+      "id": "H-2026-103",
+      "date": "2026-10-10",
+      "plotId": "PL-ELD-01",
+      "farm": "Eldoret Highland Agro-Estate",
+      "crop": "Wheat (Kenya Robin)",
+      "quantityTonnes": 95.0,
+      "grade": "Grade B",
+      "destination": "Mombasa Grain Silo",
+      "pricePerTonne": 310,
+      "totalValueUsd": 29450
+    },
+    {
+      "id": "H-2026-104",
+      "date": "2026-09-28",
+      "plotId": "PL-KIB-02",
+      "farm": "Kibwezi Farm",
+      "crop": "French Beans",
+      "quantityTonnes": 14.2,
+      "grade": "Grade A",
+      "destination": "European Union Fresh Direct",
+      "pricePerTonne": 2200,
+      "totalValueUsd": 31240
+    }
+  ],
+  "finance": [
+    {
+      "id": "FIN-01",
+      "date": "2026-10-23",
+      "type": "Income",
+      "category": "Produce Sales",
+      "description": "Payment for 142.5T Hybrid Maize Harvest (Kibwezi)",
+      "amount": 39900
+    },
+    {
+      "id": "FIN-02",
+      "date": "2026-10-19",
+      "type": "Income",
+      "category": "Produce Sales",
+      "description": "Export consignment cherry tomatoes (Baku)",
+      "amount": 40600
+    },
+    {
+      "id": "FIN-03",
+      "date": "2026-10-18",
+      "type": "Expense",
+      "category": "Weed & Invasive Control",
+      "description": "Mechanical clearing of 18 ha Lantana at Site R-07",
+      "amount": 2480
+    },
+    {
+      "id": "FIN-04",
+      "date": "2026-10-15",
+      "type": "Expense",
+      "category": "Fertilizers & Nutrients",
+      "description": "Procurement of CAN and soluble NPK fertigation mix",
+      "amount": 6850
+    },
+    {
+      "id": "FIN-05",
+      "date": "2026-10-12",
+      "type": "Expense",
+      "category": "Weed & Invasive Control",
+      "description": "Water Hyacinth intake booms & bio-agent deployment",
+      "amount": 7900
+    },
+    {
+      "id": "FIN-06",
+      "date": "2026-10-08",
+      "type": "Expense",
+      "category": "Labor & Field Operations",
+      "description": "Bi-weekly field workers and harvesting personnel payroll",
+      "amount": 8400
+    },
+    {
+      "id": "FIN-07",
+      "date": "2026-10-01",
+      "type": "Income",
+      "category": "Grants & Subsidies",
+      "description": "Climate Adaptation & Invasive Species Control Subsidy",
+      "amount": 15000
+    }
+  ],
+  "alerts": [
+    {
+      "id": "ALT-01",
+      "severity": "critical",
+      "title": "Possible disease risk – Maize",
+      "description": "Field B • Kenya • High humidity microclimate favoring blight sporulation.",
+      "timestamp": "2 h ago",
+      "farmId": "farm-01"
+    },
+    {
+      "id": "ALT-02",
+      "severity": "warning",
+      "title": "Low soil moisture – Vegetables",
+      "description": "Field C • Kenya • Soil moisture at 22% (optimal 25-45%). Next irrigation in 3 days.",
+      "timestamp": "4 h ago",
+      "farmId": "farm-01"
+    },
+    {
+      "id": "ALT-03",
+      "severity": "warning",
+      "title": "Nutrient stress – Wheat",
+      "description": "Field A • India/Eldoret • Foliar nitrogen deficiency observed in North sector.",
+      "timestamp": "6 h ago",
+      "farmId": "farm-03"
+    },
+    {
+      "id": "ALT-04",
+      "severity": "info",
+      "title": "High temperature forecast",
+      "description": "Field D • Brazil / Regional • Temperature projected to reach 34°C on Thursday.",
+      "timestamp": "8 h ago",
+      "farmId": "farm-02"
+    }
+  ],
+  "aiRecommendations": [
+    {
+      "id": "REC-01",
+      "title": "Increase irrigation in Field C (Vegetables)",
+      "description": "Soil moisture is below optimal range (22%). Schedule 18mm cycle.",
+      "type": "water",
+      "impact": "Prevent yield loss of up to 14%"
+    },
+    {
+      "id": "REC-02",
+      "title": "Monitor for Fall Armyworm / Weed threat (Maize)",
+      "description": "Risk level: Medium Field B. Apply organic neem extract or pheromone traps.",
+      "type": "pest",
+      "impact": "Protect ear formation stage"
+    },
+    {
+      "id": "REC-03",
+      "title": "Best market timing (Wheat)",
+      "description": "Prices expected to rise in 7-10 days (East Africa). Hold bulk inventory.",
+      "type": "market",
+      "impact": "+$18/tonne anticipated gain"
+    }
+  ],
+  "marketIntelligence": {
+    "commodity": "Maize (Global)",
+    "currentPrice": "$217 / tonne",
+    "weeklyChange": "+5.2% (7 days)",
+    "bestMarket": "Nairobi, Kenya",
+    "demandOutlook": "Rising"
+  },
+  "soilCarbon": {
+    "organicCarbon": "2.4%",
+    "carbonChange": "0.3% vs last season",
+    "erosionRisk": "Low",
+    "groundCover": "82%"
+  },
+  "yieldForecast": {
+    "field": "Maize (Field B)",
+    "expectedYield": "4.1 t/ha",
+    "confidenceInterval": "±0.8",
+    "confidenceLevel": "Medium confidence",
+    "low": 3.3,
+    "expected": 4.1,
+    "high": 4.9,
+    "model": "AgriPredict v1.2 | Validated: Yes"
+  }
+}

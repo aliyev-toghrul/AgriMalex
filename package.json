@@ -1,0 +1,26 @@
+{
+  "name": "agrimalex",
+  "version": "2.0.0",
+  "description": "AgriMalex - Global Agricultural Intelligence & Invasive Species Defense Platform",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js",
+    "build": "echo 'Static assets ready in public/'"
+  },
+  "keywords": [
+    "agrimalex",
+    "agriculture",
+    "farm-management",
+    "invasive-species",
+    "edrr",
+    "satellite-intelligence",
+    "gis"
+  ],
+  "author": "AgriMalex Global Systems",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2",
+    "cors": "^2.8.5"
+  }
+}
