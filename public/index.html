@@ -1122,6 +1122,373 @@
         </div>
       </section>
 
+      <!-- ════════ SECTION: SATELLITE INTELLIGENCE ════════ -->
+      <section id="sec-satellite" class="tab-section">
+        <div class="dash-hero">
+          <div class="dash-hero-title">
+            <h2>🛰 Satellite Remote Sensing & Multispectral Intelligence</h2>
+            <p>Constellation imagery overlays: Sentinel-2 & Landsat-9 reflectance, high-resolution NDVI vegetation vigor, and thermal moisture scans.</p>
+          </div>
+          <div style="display:flex; gap:10px;">
+            <button class="btn btn-primary" onclick="showToast('Querying latest Sentinel-2 pass...', 'info')">🛰 Fetch Latest Orbital Pass</button>
+            <button class="btn" onclick="showToast('NDVI calibration complete (0.72 healthy baseline)', 'success')">Calibrate Index</button>
+          </div>
+        </div>
+
+        <div class="kpi-row">
+          <div class="kpi-card"><div class="kpi-icon-box green">🛰</div><div><div class="lbl">Orbital Constellation</div><div class="val">Sentinel-2B</div><div class="sub">10m spatial resolution</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box blue">☁</div><div><div class="lbl">Cloud Cover</div><div class="val">4.2%</div><div class="sub">Clear optical window</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box teal">🌿</div><div><div class="lbl">Mean NDVI Index</div><div class="val">0.74</div><div class="sub">+0.06 vs prior cycle</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box gold">🔥</div><div><div class="lbl">Thermal Water Deficit</div><div class="val">18%</div><div class="sub">Moderate stress in Field C</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box green">🌐</div><div><div class="lbl">Revisit Cadence</div><div class="val">3 Days</div><div class="sub">Next pass: Thursday 10:14</div></div></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h3>Multispectral Indices Breakdown (Kibwezi & Baku Hubs)</h3>
+          </div>
+          <div class="panel-body" style="padding:0;">
+            <div class="tbl-scroll">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Target Zone</th>
+                    <th>Sensor Platform</th>
+                    <th>NDVI (Vegetation)</th>
+                    <th>NDWI (Canopy Water)</th>
+                    <th>EVI (Enhanced)</th>
+                    <th>SAVI (Soil Adjusted)</th>
+                    <th>Anomalies</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Field B (Hybrid Maize)</strong></td>
+                    <td>Sentinel-2 MSI</td>
+                    <td><strong style="color:var(--green)">0.72</strong></td>
+                    <td><strong style="color:var(--cyan)">0.45</strong></td>
+                    <td>0.68</td>
+                    <td>0.70</td>
+                    <td><span class="badge badge-green">Healthy Canopy</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Field C (Vegetables)</strong></td>
+                    <td>Sentinel-2 MSI</td>
+                    <td><strong style="color:var(--gold)">0.64</strong></td>
+                    <td><strong style="color:var(--orange)">0.28</strong></td>
+                    <td>0.58</td>
+                    <td>0.61</td>
+                    <td><span class="badge badge-high">Water Deficit Alert</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Absheron Greenhouse Plot 1</strong></td>
+                    <td>Landsat-9 OLI-2</td>
+                    <td><strong style="color:var(--green)">0.84</strong></td>
+                    <td><strong style="color:var(--cyan)">0.56</strong></td>
+                    <td>0.79</td>
+                    <td>0.81</td>
+                    <td><span class="badge badge-green">Peak Photosynthesis</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>North Field Wheat (Eldoret)</strong></td>
+                    <td>Sentinel-2 MSI</td>
+                    <td><strong style="color:var(--gold)">0.65</strong></td>
+                    <td><strong style="color:var(--cyan)">0.42</strong></td>
+                    <td>0.60</td>
+                    <td>0.63</td>
+                    <td><span class="badge badge-high">Nitrogen Stress</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════ SECTION: WEATHER & CLIMATE ════════ -->
+      <section id="sec-weather" class="tab-section">
+        <div class="dash-hero">
+          <div class="dash-hero-title">
+            <h2>⛅ Weather Intelligence & Agrometeorology</h2>
+            <p>Constant integrated meteorological telemetries: Precipitation forecasting, evapotranspiration (ET0), solar radiation, and crop suitability.</p>
+          </div>
+          <div style="display:flex; gap:10px;">
+            <select class="form-control" style="width:200px;" onchange="fetchLiveWeather(this.value)">
+              <option value="Nairobi,Kenya">Nairobi, Kenya</option>
+              <option value="Baku,Azerbaijan">Baku, Azerbaijan</option>
+              <option value="Eldoret,Kenya">Eldoret, Kenya</option>
+            </select>
+            <button class="btn btn-primary" onclick="showToast('Agrometeorological models recalculated', 'success')">🔄 Refresh Forecast</button>
+          </div>
+        </div>
+
+        <div class="dash-main-grid">
+          <div class="panel">
+            <div class="panel-head"><h3>Live Atmospheric Conditions</h3><span class="badge badge-green">Live Sensor Telemetry</span></div>
+            <div class="panel-body">
+              <div class="wx-box">
+                <div class="wx-top">
+                  <div>
+                    <div class="wx-temp-big">24°C</div>
+                    <div class="wx-condition">Partly cloudy • Ideal Field Work Conditions</div>
+                    <div class="wx-city">📍 Nairobi / Kibwezi Basin • Lat 1.29° S Lon 36.82° E</div>
+                  </div>
+                  <div style="font-size:3rem;">⛅</div>
+                </div>
+                <div class="wx-telemetry-row">
+                  <div>💧 Rel. Humidity: <strong>68%</strong></div>
+                  <div>💨 Wind: <strong>12 km/h ENE</strong></div>
+                  <div>🌧 Rainfall (24h): <strong>2.4 mm</strong></div>
+                  <div>☀️ Solar Flux: <strong>720 W/m²</strong></div>
+                </div>
+              </div>
+
+              <div style="margin-top:16px;">
+                <h4 style="font-size:0.85rem; font-weight:700; margin-bottom:10px;">Reference Evapotranspiration (ET0) & Water Deficit</h4>
+                <div style="background:#081722; padding:14px; border-radius:8px; border:1px solid var(--line); font-size:0.8rem; line-height:1.7;">
+                  <div>• Daily Reference ET0: <strong>4.8 mm/day</strong></div>
+                  <div>• Crop Water Requirement (Kc = 1.15): <strong>5.5 mm/day</strong></div>
+                  <div>• Effective Rainfall (last 48h): <strong>2.4 mm</strong></div>
+                  <div style="color:var(--gold); font-weight:700; margin-top:4px;">→ Net Irrigation Requirement: 18.2 mm over next 72 hours</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head"><h3>10-Day Agronomic Forecast</h3></div>
+            <div class="panel-body" style="padding:10px;">
+              <div style="display:flex; flex-direction:column; gap:8px; font-size:0.8rem;">
+                <div style="display:flex; justify-content:space-between; padding:8px 10px; background:#081722; border-radius:6px;"><span>Today</span><span>☀️ 26° / 18°</span><strong style="color:var(--cyan)">2.0 mm (70% prob)</strong></div>
+                <div style="display:flex; justify-content:space-between; padding:8px 10px; background:#081722; border-radius:6px;"><span>Tomorrow (Tue)</span><span>🌤 25° / 17°</span><strong style="color:var(--text-dim)">0.0 mm (10% prob)</strong></div>
+                <div style="display:flex; justify-content:space-between; padding:8px 10px; background:#081722; border-radius:6px;"><span>Wednesday</span><span>🌧 24° / 16°</span><strong style="color:var(--cyan)">1.2 mm (55% prob)</strong></div>
+                <div style="display:flex; justify-content:space-between; padding:8px 10px; background:#081722; border-radius:6px;"><span>Thursday</span><span>⛈ 24° / 15°</span><strong style="color:var(--cyan)">3.4 mm (85% prob)</strong></div>
+                <div style="display:flex; justify-content:space-between; padding:8px 10px; background:#081722; border-radius:6px;"><span>Friday</span><span>⛅ 23° / 15°</span><strong style="color:var(--text-dim)">0.2 mm (20% prob)</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════ SECTION: SOIL & SENSORS ════════ -->
+      <section id="sec-sensors" class="tab-section">
+        <div class="dash-hero">
+          <div class="dash-hero-title">
+            <h2>🧪 In-Situ Soil Probes & Sensor Mesh</h2>
+            <p>18 online IoT capacitance probes measuring multi-depth moisture, root-zone temperature, and electrical conductivity (EC).</p>
+          </div>
+        </div>
+
+        <div class="kpi-row">
+          <div class="kpi-card"><div class="kpi-icon-box teal">📡</div><div><div class="lbl">Online Probes</div><div class="val">18 / 18</div><div class="sub">LoRaWAN Mesh Active</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box green">💧</div><div><div class="lbl">Avg Root Moisture</div><div class="val">32%</div><div class="sub">Optimal range: 25-45%</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box blue">🌡️</div><div><div class="lbl">Soil Temperature</div><div class="val">21.8°C</div><div class="sub">15cm root-zone depth</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box gold">⚡</div><div><div class="lbl">Salinity (EC)</div><div class="val">1.2 dS/m</div><div class="sub">Non-saline healthy threshold</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box green">🧪</div><div><div class="lbl">Mean Soil pH</div><div class="val">6.6</div><div class="sub">Slightly acidic (ideal)</div></div></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Real-Time IoT Sensor Probe Fleet</h3></div>
+          <div class="panel-body" style="padding:0;">
+            <div class="tbl-scroll">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Sensor ID</th>
+                    <th>Plot Location</th>
+                    <th>Depth Profile</th>
+                    <th>Moisture (VWC)</th>
+                    <th>Soil Temp</th>
+                    <th>Bulk EC</th>
+                    <th>Battery</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>SN-KB-01</strong></td><td>Field B (Maize - Head)</td><td>10cm / 30cm / 60cm</td><td><strong style="color:var(--green)">34%</strong></td><td>22.1°C</td><td>1.1 dS/m</td><td>98%</td><td><span class="badge badge-green">Online</span></td></tr>
+                  <tr><td><strong>SN-KB-02</strong></td><td>Field B (Maize - Tail)</td><td>10cm / 30cm / 60cm</td><td><strong style="color:var(--green)">31%</strong></td><td>22.4°C</td><td>1.3 dS/m</td><td>95%</td><td><span class="badge badge-green">Online</span></td></tr>
+                  <tr><td><strong>SN-KB-03</strong></td><td>Field C (Vegetables)</td><td>10cm / 30cm</td><td><strong style="color:var(--orange)">22%</strong></td><td>23.0°C</td><td>1.5 dS/m</td><td>92%</td><td><span class="badge badge-high">Low Moisture</span></td></tr>
+                  <tr><td><strong>SN-BK-01</strong></td><td>Absheron Greenhouse Plot 1</td><td>15cm / 45cm</td><td><strong style="color:var(--green)">28%</strong></td><td>21.2°C</td><td>1.8 dS/m</td><td>100%</td><td><span class="badge badge-green">Online</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════ SECTION: YIELD FORECASTS ════════ -->
+      <section id="sec-yield_forecasts" class="tab-section">
+        <div class="dash-hero">
+          <div class="dash-hero-title">
+            <h2>📈 ML Harvest Yield Projections (AgriPredict v1.2)</h2>
+            <p>Machine-learning models combining thermal time units (GDD), satellite vegetation indices, and soil probe telemetry.</p>
+          </div>
+        </div>
+
+        <div class="dash-main-grid">
+          <div class="panel">
+            <div class="panel-head"><h3>Yield Projection: Maize (Field B)</h3><span class="badge badge-blue">Model Validated</span></div>
+            <div class="panel-body">
+              <div style="font-size:2.8rem; font-weight:800; color:#fff; font-family:var(--font-head);">
+                4.1 <span style="font-size:1.2rem; color:var(--text-muted); font-weight:400;">tonnes / hectare</span>
+              </div>
+              <p style="color:var(--green); font-size:0.85rem; margin-top:4px;">Confidence Interval: 3.3 to 4.9 t/ha (90% Bayesian CI)</p>
+
+              <div style="margin:20px 0; background:#081722; padding:16px; border-radius:8px; border:1px solid var(--line);">
+                <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:10px;">Yield Scenario Probabilities:</div>
+                <div style="display:flex; flex-direction:column; gap:10px; font-size:0.8rem;">
+                  <div>
+                    <div style="display:flex; justify-content:space-between; margin-bottom:4px;"><span>Conservative Scenario (Drought stress): 3.3 t/ha</span><strong>15% prob</strong></div>
+                    <div style="height:6px; background:var(--line); border-radius:3px;"><div style="width:15%; height:100%; background:var(--gold); border-radius:3px;"></div></div>
+                  </div>
+                  <div>
+                    <div style="display:flex; justify-content:space-between; margin-bottom:4px;"><span>Expected Baseline (Scheduled irrigation): 4.1 t/ha</span><strong style="color:var(--green)">70% prob</strong></div>
+                    <div style="height:6px; background:var(--line); border-radius:3px;"><div style="width:70%; height:100%; background:var(--green); border-radius:3px;"></div></div>
+                  </div>
+                  <div>
+                    <div style="display:flex; justify-content:space-between; margin-bottom:4px;"><span>Optimized Peak (Optimal late rains): 4.9 t/ha</span><strong style="color:var(--cyan)">15% prob</strong></div>
+                    <div style="height:6px; background:var(--line); border-radius:3px;"><div style="width:15%; height:100%; background:var(--cyan); border-radius:3px;"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head"><h3>Model Feature Attribution (SHAP)</h3></div>
+            <div class="panel-body" style="font-size:0.8rem; line-height:1.8;">
+              <div>• Cumulative Growing Degree Days (GDD): <strong style="color:var(--green)">+32% influence</strong></div>
+              <div>• Mid-Season Peak NDVI: <strong style="color:var(--green)">+28% influence</strong></div>
+              <div>• Root-Zone Moisture Stability: <strong style="color:var(--green)">+22% influence</strong></div>
+              <div>• Soil Organic Matter baseline: <strong style="color:var(--green)">+12% influence</strong></div>
+              <div>• Pest / Weed pressure penalty: <strong style="color:var(--red)">-6% discount</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════ SECTION: IRRIGATION MANAGEMENT ════════ -->
+      <section id="sec-irrigation" class="tab-section">
+        <div class="dash-hero">
+          <div class="dash-hero-title">
+            <h2>💧 Precision Irrigation & Water Accounting</h2>
+            <p>Automated valve scheduling, center-pivot speed management, and water footprint accounting per hectare.</p>
+          </div>
+        </div>
+
+        <div class="kpi-row">
+          <div class="kpi-card"><div class="kpi-icon-box blue">💧</div><div><div class="lbl">Water Consumed (MTD)</div><div class="val">4,820 m³</div><div class="sub">Within monthly quota</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box teal">🎯</div><div><div class="lbl">Application Efficiency</div><div class="val">91.4%</div><div class="sub">Precision drip emitters</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box gold">⏱️</div><div><div class="lbl">Next Automated Cycle</div><div class="val">18:00 Today</div><div class="sub">Field C Vegetables</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box green">⚡</div><div><div class="lbl">Pumping Energy Cost</div><div class="val">$0.04 / m³</div><div class="sub">Solar PV hybrid pump</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box blue">🌊</div><div><div class="lbl">Intake Basin Status</div><div class="val">94% Capacity</div><div class="sub">Athi River reservoir</div></div></div>
+        </div>
+      </section>
+
+      <!-- ════════ SECTION: SOIL & CARBON ════════ -->
+      <section id="sec-soil_carbon" class="tab-section">
+        <div class="dash-hero">
+          <div class="dash-hero-title">
+            <h2>🌱 Soil Organic Carbon & MRV Sequestration</h2>
+            <p>Regenerative farming telemetry: Measure, Report, and Verify (MRV) carbon gains from cover crops, biochar, and minimum-tillage.</p>
+          </div>
+        </div>
+
+        <div class="kpi-row">
+          <div class="kpi-card"><div class="kpi-icon-box green">🌱</div><div><div class="lbl">Soil Organic Carbon</div><div class="val">2.4%</div><div class="sub">+0.3% vs prior season</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box teal">🌿</div><div><div class="lbl">Ground Cover</div><div class="val">82%</div><div class="sub">Above erosion threshold</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box blue">⚖️</div><div><div class="lbl">Carbon Sequestered</div><div class="val">340 t CO₂e</div><div class="sub">Verified MRV estimate</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box gold">🛡️</div><div><div class="lbl">Erosion Risk</div><div class="val">Low</div><div class="sub">Wind & runoff protected</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box green">💰</div><div><div class="lbl">Carbon Credit Value</div><div class="val">$8,500</div><div class="sub">@ $25 / tonne credit</div></div></div>
+        </div>
+      </section>
+
+      <!-- ════════ SECTION: REPORTS & ANALYTICS ════════ -->
+      <section id="sec-reports" class="tab-section">
+        <div class="dash-hero">
+          <div class="dash-hero-title">
+            <h2>📊 Executive Reports & Farm Intelligence Export</h2>
+            <p>One-click audit reports for agricultural lenders, farm owners, regional cooperatives, and environmental compliance.</p>
+          </div>
+          <div style="display:flex; gap:10px;">
+            <button class="btn btn-primary" onclick="exportFinanceXlsx()">📊 Export Master P&L (.xlsx)</button>
+            <button class="btn" onclick="window.print()">🖨 Print Executive PDF Report</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Standard Quarterly Intelligence Deliverables</h3></div>
+          <div class="panel-body">
+            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:14px;">
+              <div style="background:#081722; padding:16px; border-radius:8px; border:1px solid var(--line);">
+                <strong style="color:#fff; font-size:0.95rem;">Comprehensive Farm P&L</strong>
+                <p style="color:var(--text-muted); font-size:0.75rem; margin:8px 0;">Complete revenue, labor, agrochemical, and weed control expenses.</p>
+                <button class="btn btn-sm btn-primary" onclick="exportFinanceXlsx()">Export Excel</button>
+              </div>
+              <div style="background:#081722; padding:16px; border-radius:8px; border:1px solid var(--line);"><strong style="color:#fff; font-size:0.95rem;">Agronomic Soil Health Audit</strong><p style="color:var(--text-muted); font-size:0.75rem; margin:8px 0;">pH levels, NDVI trends, and soil organic carbon progression.</p><button class="btn btn-sm" onclick="exportFarmsXlsx()">Export Plots</button></div>
+              <div style="background:#081722; padding:16px; border-radius:8px; border:1px solid var(--line);"><strong style="color:#fff; font-size:0.95rem;">Invasive Species EDRR Record</strong><p style="color:var(--text-muted); font-size:0.75rem; margin:8px 0;">Field observations, containment interventions, and recovery tracking.</p><button class="btn btn-sm btn-gold" onclick="showToast('Exporting EDRR dossier...', 'info')">Export Dossier</button></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════ SECTION: ECOSYSTEM RECOVERY SCORECARD ════════ -->
+      <section id="sec-recovery" class="tab-section">
+        <div class="dash-hero">
+          <div class="dash-hero-title">
+            <h2>♧ Ecosystem Recovery & Biodiversity Restoration</h2>
+            <p>Quantitative verification that weed control and biosecurity translates into native flora recruitment and habitat revival.</p>
+          </div>
+        </div>
+
+        <div class="kpi-row">
+          <div class="kpi-card"><div class="kpi-icon-box green">♧</div><div><div class="lbl">Sites Under Recovery</div><div class="val">41 Sites</div><div class="sub">Active restoration</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box teal">🌱</div><div><div class="lbl">Native Regeneration</div><div class="val">68%</div><div class="sub">Recruitment target: 60%</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box blue">🌳</div><div><div class="lbl">Canopy Density</div><div class="val">54%</div><div class="sub">+4 pts vs baseline</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box gold">🌊</div><div><div class="lbl">Water Flow Index</div><div class="val">+17%</div><div class="sub">Unchoked waterways</div></div></div>
+          <div class="kpi-card"><div class="kpi-icon-box green">🏆</div><div><div class="lbl">Composite Bio-Index</div><div class="val">0.74 / 1.0</div><div class="sub">Thriving ecosystem</div></div></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Restoration Site Scorecard: Site R-07 (Forest Edge Border)</h3><span class="badge badge-green">On Track (Recovery Score: 78/100)</span></div>
+          <div class="panel-body">
+            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:14px;">
+              <div style="background:#081722; padding:14px; border-radius:8px; border:1px solid var(--line);">
+                <span style="font-size:0.75rem; color:var(--text-muted)">Invasive Lantana Cover</span>
+                <div style="font-size:1.8rem; font-weight:800; color:var(--green)">12%</div>
+                <small style="color:var(--text-muted)">Reduced from 84% post-grubbing</small>
+              </div>
+              <div style="background:#081722; padding:14px; border-radius:8px; border:1px solid var(--line);">
+                <span style="font-size:0.75rem; color:var(--text-muted)">Native Acacia & Grass</span>
+                <div style="font-size:1.8rem; font-weight:800; color:var(--green)">68%</div>
+                <small style="color:var(--text-muted)">Natural seedling recruitment</small>
+              </div>
+              <div style="background:#081722; padding:14px; border-radius:8px; border:1px solid var(--line);">
+                <span style="font-size:0.75rem; color:var(--text-muted)">Soil Carbon Gain</span>
+                <div style="font-size:1.8rem; font-weight:800; color:var(--cyan)">2.4%</div>
+                <small style="color:var(--text-muted)">+0.3% sequestration gain</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════ SECTION: ALERTS & EARLY WARNING ════════ -->
+      <section id="sec-alerts" class="tab-section">
+        <div class="dash-hero">
+          <div class="dash-hero-title">
+            <h2>🔔 Real-Time Alerts & Early Warning Center</h2>
+            <p>Active biological, moisture, nutrient, and atmospheric alarms requiring field personnel action.</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-body" id="fullAlertsList">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </section>
+
     </main>
   </div>
 
