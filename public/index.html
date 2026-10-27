@@ -1763,20 +1763,47 @@
 
     function renderDashboardAlerts() {
       const container = document.getElementById('dashAlertsContainer');
-      container.innerHTML = '';
-      (AGRIMALEX_STATE.alerts || []).slice(0, 4).forEach(alt => {
-        const dotCol = alt.severity === 'critical' ? 'red' : alt.severity === 'warning' ? 'gold' : 'blue';
-        const icon = alt.severity === 'critical' ? '!' : alt.severity === 'warning' ? '⚠' : 'ℹ';
-        container.innerHTML += `
-          <div class="alert-item-mini">
-            <div class="alert-dot ${dotCol}">${icon}</div>
-            <div class="aim-text">
-              <strong>${alt.title}</strong>
-              <small>${alt.description} • ${alt.timestamp}</small>
+      if (container) {
+        container.innerHTML = '';
+        (AGRIMALEX_STATE.alerts || []).slice(0, 4).forEach(alt => {
+          const dotCol = alt.severity === 'critical' ? 'red' : alt.severity === 'warning' ? 'gold' : 'blue';
+          const icon = alt.severity === 'critical' ? '!' : alt.severity === 'warning' ? '⚠' : 'ℹ';
+          container.innerHTML += `
+            <div class="alert-item-mini">
+              <div class="alert-dot ${dotCol}">${icon}</div>
+              <div class="aim-text">
+                <strong>${alt.title}</strong>
+                <small>${alt.description} • ${alt.timestamp}</small>
+              </div>
             </div>
-          </div>
-        `;
-      });
+          `;
+        });
+      }
+
+      const fullContainer = document.getElementById('fullAlertsList');
+      if (fullContainer) {
+        fullContainer.innerHTML = '';
+        (AGRIMALEX_STATE.alerts || []).forEach(alt => {
+          const dotCol = alt.severity === 'critical' ? 'red' : alt.severity === 'warning' ? 'gold' : 'blue';
+          const icon = alt.severity === 'critical' ? '!' : alt.severity === 'warning' ? '⚠' : 'ℹ';
+          const badgeClass = alt.severity === 'critical' ? 'badge-red' : alt.severity === 'warning' ? 'badge-gold' : 'badge-green';
+          fullContainer.innerHTML += `
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:12px; border-bottom:1px solid var(--line);">
+              <div style="display:flex; align-items:center; gap:12px;">
+                <div class="alert-dot ${dotCol}" style="width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold;">${icon}</div>
+                <div>
+                  <div style="font-weight:600; font-size:0.88rem;">${alt.title}</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted);">${alt.description}</div>
+                </div>
+              </div>
+              <div style="text-align:right;">
+                <span class="badge ${badgeClass}">${alt.severity.toUpperCase()}</span>
+                <div style="font-size:0.68rem; color:var(--text-dim); margin-top:4px;">${alt.timestamp}</div>
+              </div>
+            </div>
+          `;
+        });
+      }
     }
 
     function renderPlotsTable() {
